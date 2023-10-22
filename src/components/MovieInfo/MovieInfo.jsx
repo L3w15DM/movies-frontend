@@ -1,15 +1,15 @@
-const MovieInfo = ({ title }) => {
+const MovieInfo = ({ movieObj }) => {
   return (
     <div>
-      <h4>{title}</h4>
+      <h4>{movieObj.title}</h4>
       <div>
         <div>
           <span>Running Time</span>
-          <span>142</span>
+          <span>{movieObj.runningTime}</span>
         </div>
         <div>
           <span>Genre</span>
-          <span>Romantic Drama</span>
+          <span>{movieObj.genre}</span>
         </div>
       </div>
     </div>
