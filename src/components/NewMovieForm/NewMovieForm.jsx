@@ -2,13 +2,22 @@ import React, { useState } from "react";
 
 const NewMovieForm = ({}) => {
   const [title, setTitle] = useState("");
-
   const [runningTime, setRunningTime] = useState("");
-
   const [genre, setGenre] = useState("");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const formData = {
+      title,
+      runningTime,
+      genre,
+    };
+
+    console.log(formData);
+  };
+
   return (
-    <form className="flex-itm">
+    <form onSubmit={handleSubmit} className="flex-itm">
       <h4>Add Movie</h4>
       <div>
         <label>Title</label>
@@ -25,6 +34,7 @@ const NewMovieForm = ({}) => {
         <label>Genre</label>
         <input value={genre} onChange={(e) => setGenre(e.target.value)} />
       </div>
+      <button type="submit">Add Movie</button>
     </form>
   );
 };
