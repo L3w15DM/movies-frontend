@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const NewMovieForm = ({}) => {
+const NewMovieForm = ({ onNewMovie }) => {
   const [title, setTitle] = useState("");
   const [runningTime, setRunningTime] = useState("");
   const [genre, setGenre] = useState("");
@@ -13,11 +13,11 @@ const NewMovieForm = ({}) => {
       genre,
     };
 
-    console.log(formData);
+    onNewMovie(formData);
   };
 
   return (
-    <form onSubmit={handleSubmit} className="flex-itm">
+    <form onSubmit={handleSubmit} className="flex-item">
       <h4>Add Movie</h4>
       <div>
         <label>Title</label>
